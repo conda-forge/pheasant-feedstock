@@ -29,6 +29,7 @@ requirements:
     - jinja2
     - termcolor
     - colorama
+    - yaml
 
 test:
   imports:
