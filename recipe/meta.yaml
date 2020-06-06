@@ -1,5 +1,5 @@
 {% set name = "pheasant" %}
-{% set version = "2.5.4" %}
+{% set version = "2.5.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0466da0a94eb2324dab43e4583b1251891adb012a6d264aaed42c7813cbfd07e
+  sha256: c648330166ffabaf7f93017cbca98be016abbea493ea9fb69468b1ba0f7df284
 
 build:
   noarch: python
-  number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 1
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - pheasant = pheasant.main:cli
 
@@ -29,6 +29,7 @@ requirements:
     - jinja2
     - termcolor
     - colorama
+    - pyyaml
 
 test:
   imports:
@@ -41,7 +42,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Documentation tool for Markdown conversion by Jupyter client'
+  summary: Documentation tool for Markdown conversion by Jupyter client
   doc_url: https://pheasant.daizutabi.net/
   dev_url: https://github.com/daizutabi/pheasant
 
